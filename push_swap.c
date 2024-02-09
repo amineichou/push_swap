@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 21:18:57 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/08 19:02:23 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/09 18:26:36 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,10 @@ static void	check_valid_args(char **av)
 		j = 0;
 		while (av[i][j])
 		{
+			if ((av[i][j] == '+' || av[i][j] == '-') && av[i][j + 1] && !ft_isdigit(av[i][j + 1]))
+				ft_puterror();
+			if ((av[i][j] == '+' || av[i][j] == '-') && !av[i][j + 1] )
+				ft_puterror();
 			if (ft_isdigit(av[i][j]) && av[i][j + 1] && !ft_isdigit(av[i][j + 1]))
 				ft_puterror();
 			j++;
@@ -75,11 +79,21 @@ static void	check_valid_args(char **av)
 	}
 }
 
+// test 
+void print_list(t_stack_node *lst)
+{
+    t_stack_node *test = lst;
+    while (test)
+    {
+        printf("%d ", test->value);
+        test = test->next;
+    }
+}
+
 int main(int ac, char **av)
 {
-	// t_stack_node	*stack_a;
-	// t_stack_node	*stack_b;
-	// int				i;
+	t_stack_node	*stack_a;
+	t_stack_node	*stack_b;
 
 	if (ac == 1)
 		return (0);
@@ -89,17 +103,17 @@ int main(int ac, char **av)
 		av = ft_split(ft_strjoin(av, ac), ' ');
 		check_valid_args(av);
 	}
-	// i = 0;
 	if (check_doublcates(av))
 		ft_puterror();
-	// stack_a = set_stack(av);
-	// stack_b = NULL;
-	// if (!check_sorted(stack_a))
-	// 	sort_stack(&stack_a, &stack_b);
+	stack_a = set_stack(av);
+	stack_b = NULL;
+	if (!check_sorted(stack_a))
+		sort_stack(&stack_a, &stack_b);
+    print_list(stack_a);
 	// if (check_sorted(stack_a))
 	// {
-	// 	ft_putstr("OK\n");
-	// 	return (0);
+	// 	ft_putstr("OK\n");1
+	// 	// return (0);
 	// }
     return (0);
 }

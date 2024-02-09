@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 19:39:53 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/08 18:59:18 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/09 15:34:46 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_isspace(char c)
 	return (0);
 }
 
-int	stack_size(t_stack_node *stack)
+int	ft_stack_size(t_stack_node *stack)
 {
 	t_stack_node	*last;
 	int				i;

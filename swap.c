@@ -30,7 +30,7 @@ void	swap_stack_a(t_stack_node **stack)
 {
 	int	size;
 
-	size = stack_size(*stack);
+	size = ft_stack_size(*stack);
 	if (size <= 1)
 		return ;
 	swap_stack(stack);
@@ -41,7 +41,7 @@ void	swap_stack_b(t_stack_node **stack)
 {
 	int	size;
 
-	size = stack_size(*stack);
+	size = ft_stack_size(*stack);
 	if (size <= 1)
 		return ;
 	swap_stack(stack);
@@ -53,8 +53,8 @@ void	swap_stack_a_b(t_stack_node **stack_a, t_stack_node **stack_b)
 	int	size_a;
 	int	size_b;
 
-	size_a = stack_size(*stack_a);
-	size_b = stack_size(*stack_b);
+	size_a = ft_stack_size(*stack_a);
+	size_b = ft_stack_size(*stack_b);
 	if (size_a <= 1 || size_b <= 1)
 		return ;
 	swap_stack(stack_b);

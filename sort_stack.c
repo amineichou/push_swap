@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 11:07:44 by moichou           #+#    #+#             */
-/*   Updated: 2024/01/14 22:43:17 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/09 20:59:52 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,24 +27,28 @@ static void	sort_three(t_stack_node **stack)
 	}
 }
 
-static void	sort_five(t_stack_node **stack_a, t_stack_node **stack_b)
+static void sort_more(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-	while (stack_size(*stack_a) > 3)
-		push_a_to_b(stack_a, stack_b);
-	sort_three(stack_a);
-    if ((*stack_b)->value > (*stack_b)->next->value)
-		swap_stack_b(stack_b);
-	push_b_to_a(stack_a, stack_b);
-	push_b_to_a(stack_a, stack_b);
+    t_stack_node	*head_node;
+	int				stack_a_size;
+
+	head_node = *stack_a;
+	stack_a_size = ft_stack_size(*stack_a);
+	while (head_node && stack_a_size > 3)
+	{
+		push_a_to_b(&head_node, stack_b);
+		head_node = head_node->next;
+		stack_a_size--;
+	}
 }
 
 void	sort_stack(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	int	size;
 
-	size = stack_size(*stack_a);
+	size = ft_stack_size(*stack_a);
 	if (size <= 3)
 		sort_three(stack_a);
-	else if (size <= 5)
-		sort_five(stack_a, stack_b);
+	else if (size > 3)
+		sort_more(stack_a, stack_b);
 }

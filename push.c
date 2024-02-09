@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 22:05:12 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/07 16:27:20 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/09 21:02:23 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ void	push_a_to_b(t_stack_node **stack_a, t_stack_node **stack_b)
 	t_stack_node	*stack_a_last;
 	t_stack_node	*stack_b_last;
 	t_stack_node	*stack_a_last_prev;
-	if (stack_size(*stack_a) == 0)
+	if (ft_stack_size(*stack_a) == 0)
 		return ;
 	stack_a_last = get_last_node(stack_a);
 	stack_b_last = get_last_node(stack_b);
 	stack_a_last_prev = *stack_a;
-	while (stack_a_last_prev->next != stack_a_last)
+	while (stack_a_last_prev->next->next != NULL)
 		stack_a_last_prev = stack_a_last_prev->next;
 	if (!stack_b_last)
 	{
@@ -43,12 +43,12 @@ void	push_b_to_a(t_stack_node **stack_a, t_stack_node **stack_b)
 	t_stack_node	*stack_b_top;
 	t_stack_node	*stack_b_sec;
 
-	if (stack_size(*stack_b) == 0)
+	if (ft_stack_size(*stack_b) == 0)
 		return ;
 	stack_a_top = (*stack_a);
 	stack_b_top = (*stack_b);
 	// check if there's only one node in stack b
-	if (stack_size(*stack_b) == 1)
+	if (ft_stack_size(*stack_b) == 1)
 	{
 		stack_b_top->next = stack_a_top;
 		*stack_a = stack_b_top;

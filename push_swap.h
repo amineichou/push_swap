@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 19:50:42 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/08 18:45:47 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/09 15:34:33 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char			**ft_split(char const *s, char c);
 
 //utils
 size_t			ft_strlen(const char *str);
-int				stack_size(t_stack_node *stack);
+int				ft_stack_size(t_stack_node *stack);
 t_stack_node    *get_last_node(t_stack_node **stack);
 int				check_sorted(t_stack_node *stack);
 int				ft_isdigit(int c);
