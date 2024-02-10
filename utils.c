@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 19:39:53 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/09 15:34:46 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/10 17:37:55 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,31 @@ int	ft_stack_size(t_stack_node *stack)
 	return (i);
 }
 
-t_stack_node	*get_last_node(t_stack_node **stack)
+t_stack_node	*ft_get_last_node(t_stack_node *stack)
 {
-    t_stack_node *last;
+	t_stack_node	*last;
 
-    if (!(*stack))
-        return (NULL);
-    last = *stack;
-    while (last->next)
-        last = last->next;
-    return (last);
+	if (!stack)
+		return (NULL);
+	last = stack;
+	while (last->next)
+		last = last->next;
+	return (last);
+}
+
+t_stack_node	*ft_get_prev_node(t_stack_node *head)
+{
+	t_stack_node	*current;
+	t_stack_node	*last;
+
+	last = head;
+	current  = head;
+	while (last->next)
+	{
+		current = last;
+		last = last->next;
+	}
+	return (current);
 }
 
 int	check_sorted(t_stack_node *stack)

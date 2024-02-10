@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 11:07:44 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/09 20:59:52 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/10 17:42:44 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,17 @@ static void	sort_three(t_stack_node **stack)
 
 static void sort_more(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-    t_stack_node	*head_node;
+    t_stack_node	*head_node_a;
 	int				stack_a_size;
 
-	head_node = *stack_a;
+	head_node_a = *stack_a;
 	stack_a_size = ft_stack_size(*stack_a);
-	while (head_node && stack_a_size > 3)
+	while (head_node_a && stack_a_size > 3)
 	{
-		push_a_to_b(&head_node, stack_b);
-		head_node = head_node->next;
+		push_a_to_b(&head_node_a, stack_b);
+		head_node_a = head_node_a->next;
 		stack_a_size--;
+        printf("stack size %d\n", stack_a_size);
 	}
 }
 

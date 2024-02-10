@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 22:05:12 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/09 21:02:23 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/10 18:57:41 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,18 @@
 // take the top node of b and push it to a
 void	push_a_to_b(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-	t_stack_node	*stack_a_last;
 	t_stack_node	*stack_b_last;
-	t_stack_node	*stack_a_last_prev;
-	if (ft_stack_size(*stack_a) == 0)
-		return ;
-	stack_a_last = get_last_node(stack_a);
-	stack_b_last = get_last_node(stack_b);
-	stack_a_last_prev = *stack_a;
-	while (stack_a_last_prev->next->next != NULL)
-		stack_a_last_prev = stack_a_last_prev->next;
-	if (!stack_b_last)
+
+	if (!(*stack_b))
 	{
-		*stack_b = stack_a_last;
-		stack_a_last_prev->next = NULL;
-		ft_putstr("pb\n");
+		(*stack_b) = (*stack_a);
+		(*stack_a) = (*stack_a)->next;
 		return ;
 	}
-	stack_a_last_prev->next = NULL;
-	stack_b_last->next = stack_a_last;
+	stack_b_last = ft_get_last_node(*stack_b);
+	stack_b_last->next = (*stack_a);
+	stack_b_last->next = NULL;
+	(*stack_a) = (*stack_a)->next;
 	ft_putstr("pb\n");
 }
 

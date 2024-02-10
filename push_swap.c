@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 21:18:57 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/09 18:26:36 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/10 17:38:52 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,11 @@ int main(int ac, char **av)
 	stack_b = NULL;
 	if (!check_sorted(stack_a))
 		sort_stack(&stack_a, &stack_b);
+    printf("stack a : ");
     print_list(stack_a);
+    printf("\n");
+    printf("stack b : ");
+    print_list(stack_b);
 	// if (check_sorted(stack_a))
 	// {
 	// 	ft_putstr("OK\n");1
