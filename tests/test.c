@@ -3,6 +3,7 @@
 #endif
 
 #include <libc.h>
+#include <time.h>
 
 typedef struct s_stack_node
 {
@@ -14,6 +15,14 @@ typedef struct s_stack_node
 	struct s_stack_node	*next;
 } t_stack_node;
 
+
+void initRandom() {
+    srand(time(NULL)); // Seed the random number generator with the current time
+}
+
+int generateNumber() {
+    return rand() % 11;
+}
 
 t_stack_node *create_node(int value) {
     t_stack_node *new_node = (t_stack_node *)malloc(sizeof(t_stack_node));
@@ -44,9 +53,10 @@ void generate_linked_list(t_stack_node **stack, int start, int end) {
     if (start > end)
         return;
     for (int i = end; i >= start; i--) {
-        push(stack, i);
+        push(stack, generateNumber());
     }
 }
+
 
 //##########################################################################################
 
@@ -83,29 +93,39 @@ void	push_a_to_b(t_stack_node **stack_a, t_stack_node **stack_b)
 	t_stack_node	*temp;
 	if (!(*stack_b))
 	{
-		(*stack_b) = (*stack_a);
-		(*stack_a) = (*stack_a)->next;
+		*stack_b = *stack_b;
+		*stack_b = (*stack_a)->next; 
 		(*stack_b)->next = NULL;
 		return ;
 	}
-    temp = *stack_a;   // Temporarily hold the top of stack A
-    *stack_a = (*stack_a)->next;     // Move the top of stack A to the next node
-    temp->next = *stack_b;           // Set the next of the temp node to the top of stack B
-    *stack_b = temp;   
+    temp = *stack_a;
+    *stack_a = (*stack_a)->next;
+    temp->next = *stack_b;
+    *stack_b = temp;
 	printf("pb\n");
+}
+
+t_stack_node	*ft_get_smallest_value(t_stack_node *head)
+{
+	t_stack_node	*smallest;
+
+	smallest = head;
+	while (head)
+	{
+		if (smallest->value > head->value)
+			smallest = head;
+		head = head->next;
+	}
+    return (smallest);
 }
 
 int main(void)
 {
+    initRandom();
 	t_stack_node *stack = NULL;
-    t_stack_node *stack_sec = NULL;
-    generate_linked_list(&stack, 1, 10);
+    generate_linked_list(&stack, 4, 10);
 
-    for (int i = 0; i < 5; i++)
-    {
-        push_a_to_b(&stack, &stack_sec);
-    }
+    printf("smallest %d\n", ft_get_smallest_value(stack)->value);
 
     print_stack(stack);
-    print_stack(stack_sec);
 }

@@ -17,7 +17,6 @@ void	swap_stack(t_stack_node **stack)
 {
 	t_stack_node	*x; // top of the stack
 	t_stack_node	*y; // second
-//	t_stack_node	*z; // temporary
 
 	x = *stack;
 	y = (*stack)->next;

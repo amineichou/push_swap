@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:58:03 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/07 15:49:22 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/12 12:50:27 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ static t_stack_node	*create_node(char *value)
 
 	new_node = malloc(sizeof(t_stack_node));
 	new_node->value = ft_atoi(value);
+	new_node->target_node = NULL;
 	return (new_node);
 }
 

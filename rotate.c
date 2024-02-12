@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 22:01:21 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/09 15:35:46 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/12 10:40:59 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@ void	rotate(t_stack_node **stack)
 	t_stack_node	*last;
 	t_stack_node	*sec;
 
-	last = *stack;
+	last = ft_get_last_node(*stack);
 	sec = (*stack)->next;
-	while (last->next)
-		last = last->next;
 	last->next = *stack;
 	last->next->next = NULL;
 	*stack = sec;
