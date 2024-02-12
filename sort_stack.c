@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 11:07:44 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/12 13:07:25 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/12 13:09:16 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static void	set_target_node(t_stack_node *stack_a, t_stack_node *stack_b)
 			head_b->target_node = ft_get_smallest_value(stack_a);
 		head_b = head_b->next;
 	}
-} 
+}
 
 static void sort_more(t_stack_node **stack_a, t_stack_node **stack_b)
 {
