@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 21:18:57 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/12 11:08:16 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/13 21:40:03 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,12 +82,15 @@ static void	check_valid_args(char **av)
 // test 
 void print_list(t_stack_node *lst)
 {
-    t_stack_node *test = lst;
-    while (test)
-    {
-        printf("%d ", test->value);
-        test = test->next;
-    }
+	t_stack_node *test = lst;
+	while (test)
+	{
+		// if (test->target_node)
+		// 	printf("%d ",  test->value);
+		// else
+			printf("%d ", test->value);
+		test = test->next;
+	}
 }
 
 int main(int ac, char **av)
@@ -109,12 +112,12 @@ int main(int ac, char **av)
 	stack_b = NULL;
 	if (!check_sorted(stack_a))
 		sort_stack(&stack_a, &stack_b);
-    print_list(stack_a);
-    printf("\n");
-    print_list(stack_b);
+	print_list(stack_a);
+	printf("\n");
+	//print_list(stack_b);
 	if (check_sorted(stack_a))
 		ft_putstr("OK\n");
-    else
+	else
 		ft_putstr("NO\n");
-    return (0);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 19:50:42 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/12 12:39:59 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/13 16:01:22 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int				ft_stack_size(t_stack_node *stack);
 t_stack_node	*ft_get_last_node(t_stack_node *stack);
 t_stack_node	*ft_get_prev_node(t_stack_node *head);
 t_stack_node	*ft_get_smallest_value(t_stack_node *head);
+t_stack_node    *ft_get_lowest_coast(t_stack_node *stack);
 int				check_sorted(t_stack_node *stack);
 int				ft_isdigit(int c);
 int				ft_atoi(const char *str);
@@ -47,6 +48,11 @@ char			*ft_strjoin(char **str, int ac);
 int				ft_isspace(char c);
 void			ft_putstr(char *s);
 void			ft_puterror(void);
+
+// stack updater
+void	set_cost(t_stack_node *stack_a, t_stack_node *stack_b);
+void	set_target_node(t_stack_node *stack_a, t_stack_node *stack_b);
+void	set_index(t_stack_node *stack);
 
 // swap
 void	swap_stack_a(t_stack_node **stack);
