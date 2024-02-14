@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 19:50:42 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/13 16:01:22 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/14 16:28:29 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void			ft_puterror(void);
 // stack updater
 void	set_cost(t_stack_node *stack_a, t_stack_node *stack_b);
 void	set_target_node(t_stack_node *stack_a, t_stack_node *stack_b);
+void	set_position_middle(t_stack_node *stack_a, t_stack_node *stack_b);
 void	set_index(t_stack_node *stack);
 
 // swap

@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 14:59:59 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/13 15:00:02 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/14 18:36:15 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,44 @@ void	set_cost(t_stack_node *stack_a, t_stack_node *stack_b)
 	b_size = ft_stack_size(stack_b);
 	while (stack_b)
 	{
+	//	printf("index = %d | size %d | target index = %d | target size %d \n", stack_b->index, b_size, stack_b->target_node->index, a_size);
+		if (stack_b->is_above_middle && stack_b->target_node->is_above_middle)
+			stack_b->coast = stack_b->index + stack_b->target_node->index + 10;
+			
+		else if (!(stack_b->is_above_middle) && !(stack_b->target_node->is_above_middle))
+			stack_b->coast = (b_size - stack_b->index) + (a_size - stack_b->target_node->index);
+
+		else if (stack_b->is_above_middle && !(stack_b->target_node->is_above_middle))
+			stack_b->coast = stack_b->index + (a_size - stack_b->target_node->index);
+			
+		else if (!(stack_b->is_above_middle) && stack_b->target_node->is_above_middle)
+			stack_b->coast = (b_size - stack_b->index) + stack_b->target_node->index;
+		stack_b = stack_b->next;
+	}
+}
+
+void	set_position_middle(t_stack_node *stack_a, t_stack_node *stack_b)
+{
+	int	a_size;
+	int	b_size;
+
+	a_size = ft_stack_size(stack_a);
+	b_size = ft_stack_size(stack_b);
+	while (stack_a)
+	{
+		if (stack_a->index <= a_size / 2)
+			stack_a->is_above_middle = 1;
+		else
+			stack_a->is_above_middle = 0;
+		printf("[%d]", stack_a)
+		stack_a = stack_a->next;
+	}
+	while (stack_b)
+	{
 		if (stack_b->index <= b_size / 2)
-		{
-			if (stack_b->target_node->index <= a_size / 2)
-				stack_b->coast = stack_b->index + stack_b->target_node->index;
-			else
-				stack_b->coast = stack_b->index + (a_size - stack_b->target_node->index);
-		}
-		else if (stack_b->index > b_size / 2)
-		{
-			if (stack_b->target_node->index > a_size / 2)
-				stack_b->coast = (b_size - stack_b->index) + (a_size - stack_b->target_node->index);
-			else
-				stack_b->coast = (b_size - stack_b->index) + stack_b->target_node->index;
-		}
+			stack_b->is_above_middle = 1;
+		else
+			stack_b->is_above_middle = 0;
 		stack_b = stack_b->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 21:18:57 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/13 21:40:03 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/14 16:34:07 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,9 @@ void print_list(t_stack_node *lst)
 	while (test)
 	{
 		// if (test->target_node)
-		// 	printf("%d ",  test->value);
+		// 	printf("%d(%d) ",  test->value, test->target_node->value);
 		// else
-			printf("%d ", test->value);
+			printf("%d(%d) ", test->value, test->is_above_middle);
 		test = test->next;
 	}
 }
@@ -114,7 +114,7 @@ int main(int ac, char **av)
 		sort_stack(&stack_a, &stack_b);
 	print_list(stack_a);
 	printf("\n");
-	//print_list(stack_b);
+	print_list(stack_b);
 	if (check_sorted(stack_a))
 		ft_putstr("OK\n");
 	else
