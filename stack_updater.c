@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 14:59:59 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/14 18:36:15 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/14 20:02:17 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	set_position_middle(t_stack_node *stack_a, t_stack_node *stack_b)
 			stack_a->is_above_middle = 1;
 		else
 			stack_a->is_above_middle = 0;
-		printf("[%d]", stack_a)
+		printf("[%d]", stack_a->value);
 		stack_a = stack_a->next;
 	}
 	while (stack_b)
