@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 19:50:42 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/14 16:28:29 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/15 17:19:14 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct s_stack_node
 t_stack_node	*set_stack(char **splited);
 char			**ft_split(char const *s, char c);
 
-//utils
+// utils
 size_t			ft_strlen(const char *str);
 int				ft_stack_size(t_stack_node *stack);
 t_stack_node	*ft_get_last_node(t_stack_node *stack);

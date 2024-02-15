@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 11:07:44 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/14 18:16:33 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/15 21:11:30 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,47 +24,6 @@ static void	sort_three(t_stack_node **stack)
 		swap_stack_a(stack);
 }
 
-// static void	rotate_target_node(t_stack_node *target_node)
-// {
-// 	int				index;
-// 	int				a_size;
-
-// 	a_size = ft_stack_size(target_node);
-// 	index = target_node->index;
-// 	printf("asize %d\n", index);
-// 	while (index)
-// 	{
-// 		//printf("should mount\n");
-// 		if (target_node->index >= a_size / 2)
-// 			rotate_a(&target_node);
-// 		else
-// 			reverse_rotate_a(&target_node);
-// 		index--;
-// 	}
-// }
-
-// static void	rotate_lowest_coast_n_target(t_stack_node **stack)
-// {
-// 	t_stack_node	*node_lowest_coast;
-// 	t_stack_node	*target_node;
-// 	int				lowest_coast;
-// 	int				b_size;
-
-// 	node_lowest_coast = ft_get_lowest_coast(*stack);
-// 	lowest_coast = node_lowest_coast->coast;
-// 	target_node = (*stack)->target_node;
-// 	b_size = ft_stack_size(*stack);
-// 	while (lowest_coast)
-// 	{
-// 		if (node_lowest_coast->index >= b_size / 2)
-// 			rotate_b(stack);
-// 		else
-// 			reverse_rotate_b(stack);
-// 		lowest_coast--;
-// 	}
-// 	rotate_target_node(target_node);
-// }
-
 static void update_stack(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	set_index(*stack_a);
@@ -74,26 +33,58 @@ static void update_stack(t_stack_node **stack_a, t_stack_node **stack_b)
 	set_cost(*stack_a, *stack_b);
 }
 
-// static void	final_step(t_stack_node **stack)
-// {
-// 	t_stack_node	*smallest_node_value;
-// 	int				s_size;
-// 	int				index;
+static void	put_cheapest_on_top(t_stack_node **stack_a, t_stack_node **stack_b)
+{
+	t_stack_node	*cheapest;
+	int 			rotate_steps;
 
-// 	smallest_node_value = ft_get_smallest_value(*stack);
-// 	s_size = ft_stack_size(*stack);
-// 	index = smallest_node_value->index;
-// 	if (index < s_size / 2)
-// 	{
-// 		while (index--)
-// 			rotate_a(stack);
-// 	}
-// 	else if (index >= s_size / 2)
-// 	{
-// 		while (index--)
-// 			reverse_rotate_a(stack);
-// 	}
-// }
+	cheapest = ft_get_lowest_coast(*stack_b);
+	if (cheapest->is_above_middle)
+		rotate_steps = cheapest->index;
+	else
+		rotate_steps = ft_stack_size(*stack_b) - cheapest->index;
+	while (rotate_steps)
+	{
+		if (cheapest->is_above_middle)
+			rotate_b(stack_b);
+		else
+			reverse_rotate_b(stack_b);
+		rotate_steps--;
+	}
+	cheapest = cheapest->target_node;
+	if (cheapest->is_above_middle)
+		rotate_steps = cheapest->index;
+	else
+		rotate_steps = ft_stack_size(*stack_a) - cheapest->index;
+	while (rotate_steps)
+	{
+		if (cheapest->is_above_middle)
+			rotate_a(stack_a);
+		else
+			reverse_rotate_a(stack_a);
+		rotate_steps--;
+	}
+}
+
+static void	final_step(t_stack_node **stack_a)
+{
+	t_stack_node	*smallest_node_value;
+	int				rotate_steps;
+
+	smallest_node_value = ft_get_smallest_value(*stack_a);
+	if (smallest_node_value->is_above_middle)
+		rotate_steps = smallest_node_value->index;
+	else
+		rotate_steps = ft_stack_size(*stack_a) - smallest_node_value->index;
+	while (rotate_steps)
+	{
+		if (smallest_node_value->is_above_middle)
+			rotate_a(stack_a);
+		else
+			reverse_rotate_a(stack_a);
+		rotate_steps--;
+	}
+}
 
 static void	best_move(t_stack_node **stack_a, t_stack_node **stack_b)
 {
@@ -104,7 +95,7 @@ static void	best_move(t_stack_node **stack_a, t_stack_node **stack_b)
 	{
 		if (!(*stack_b))
 			push_a_to_b(stack_a, stack_b);
-		else if ((*stack_a)->value > (*stack_b)->value) // big in bottom
+		else if ((*stack_a)->value > (*stack_b)->value)
 		{
 			push_a_to_b(stack_a, stack_b);
 			swap_stack_b(stack_b);
@@ -114,13 +105,14 @@ static void	best_move(t_stack_node **stack_a, t_stack_node **stack_b)
 		stack_a_size--;
 	}
 	sort_three(stack_a);
-	// while (*stack_b)
-	// {
+	while (*stack_b)
+	{
 		update_stack(stack_a, stack_b);
-	//	rotate_lowest_coast_n_target(stack_b);
-	// 	push_b_to_a(stack_a, stack_b);
-	// }
-	//final_step(stack_a);
+		put_cheapest_on_top(stack_a, stack_b);
+		push_b_to_a(stack_a, stack_b);
+	}
+	update_stack(stack_a, stack_b);
+	final_step(stack_a);
 }
 
 void	sort_stack(t_stack_node **stack_a, t_stack_node **stack_b)
