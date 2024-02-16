@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 18:32:15 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/16 18:35:29 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/16 18:47:27 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,23 @@ void	update_stack(t_stack_node **stack_a, t_stack_node **stack_b)
 	set_position_middle(*stack_a, *stack_b);
 	set_cost(*stack_a, *stack_b);
 }
+static void	put_cheapest_target_on_top(t_stack_node **stack_a, t_stack_node *cheapest)
+{
+	int	rotate_steps;
+
+	if (cheapest->is_above_middle)
+		rotate_steps = cheapest->index;
+	else
+		rotate_steps = ft_stack_size(*stack_a) - cheapest->index;
+	while (rotate_steps)
+	{
+		if (cheapest->is_above_middle)
+			rotate_a(stack_a);
+		else
+			reverse_rotate_a(stack_a);
+		rotate_steps--;
+	}
+}
 
 void	put_cheapest_on_top(t_stack_node **stack_a, t_stack_node **stack_b)
 {
@@ -51,17 +68,5 @@ void	put_cheapest_on_top(t_stack_node **stack_a, t_stack_node **stack_b)
 			reverse_rotate_b(stack_b);
 		rotate_steps--;
 	}
-	cheapest = cheapest->target_node;
-	if (cheapest->is_above_middle)
-		rotate_steps = cheapest->index;
-	else
-		rotate_steps = ft_stack_size(*stack_a) - cheapest->index;
-	while (rotate_steps)
-	{
-		if (cheapest->is_above_middle)
-			rotate_a(stack_a);
-		else
-			reverse_rotate_a(stack_a);
-		rotate_steps--;
-	}
+	put_cheapest_target_on_top(stack_a, cheapest->target_node);
 }

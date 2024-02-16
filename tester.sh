@@ -1,3 +1,4 @@
+make
 # 3
 echo "3 random number"
 ARG="0 1 2"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
