@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 19:50:42 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/16 14:32:31 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/16 18:37:04 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,11 @@ char			*ft_strjoin(char **str, int ac);
 int				ft_isspace(char c);
 void			ft_putstr(char *s);
 void			ft_puterror(void);
+
+// sort tools
+void	sort_three(t_stack_node **stack);
+void	update_stack(t_stack_node **stack_a, t_stack_node **stack_b);
+void	put_cheapest_on_top(t_stack_node **stack_a, t_stack_node **stack_b);
 
 // stack updater
 void	set_cost(t_stack_node *stack_a, t_stack_node *stack_b);

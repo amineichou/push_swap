@@ -6,65 +6,11 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 11:07:44 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/16 15:45:12 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/16 18:36:46 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	sort_three(t_stack_node **stack)
-{
-	if (check_sorted(*stack))
-		return ;
-	if ((*stack)->value > (*stack)->next->value)
-		swap_stack_a(stack);
-	if (!check_sorted(*stack))
-		reverse_rotate_a(stack);
-	if (!check_sorted(*stack))
-		swap_stack_a(stack);
-}
-
-static void update_stack(t_stack_node **stack_a, t_stack_node **stack_b)
-{
-	set_index(*stack_a);
-	set_index(*stack_b);
-	set_target_node(*stack_a, *stack_b);
-	set_position_middle(*stack_a, *stack_b);
-	set_cost(*stack_a, *stack_b);
-}
-
-static void	put_cheapest_on_top(t_stack_node **stack_a, t_stack_node **stack_b)
-{
-	t_stack_node	*cheapest;
-	int 			rotate_steps;
-
-	cheapest = ft_get_lowest_coast(*stack_b);
-	if (cheapest->is_above_middle)
-		rotate_steps = cheapest->index;
-	else
-		rotate_steps = ft_stack_size(*stack_b) - cheapest->index;
-	while (rotate_steps)
-	{
-		if (cheapest->is_above_middle)
-			rotate_b(stack_b);
-		else
-			reverse_rotate_b(stack_b);
-		rotate_steps--;
-	}
-	cheapest = cheapest->target_node;
-	if (cheapest->is_above_middle)
-		rotate_steps = cheapest->index;
-	else
-		rotate_steps = ft_stack_size(*stack_a) - cheapest->index;
-	while (rotate_steps)
-	{
-		if (cheapest->is_above_middle)
-			rotate_a(stack_a);
-		else
-			reverse_rotate_a(stack_a);
-		rotate_steps--;
-	}
-}
 
 static void	final_step(t_stack_node **stack_a)
 {
@@ -96,7 +42,7 @@ static void	best_move(t_stack_node **stack_a, t_stack_node **stack_b)
 	while (stack_a_size > 3)
 	{
 		push_a_to_b(stack_a, stack_b);
-		if((*stack_b)->value > med)
+		if((*stack_b)->value >= med)
 			rotate_b(stack_b);
 		stack_a_size--;
 	}
