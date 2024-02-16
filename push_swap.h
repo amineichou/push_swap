@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 19:50:42 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/15 17:19:14 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/16 14:32:31 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int				ft_stack_size(t_stack_node *stack);
 t_stack_node	*ft_get_last_node(t_stack_node *stack);
 t_stack_node	*ft_get_prev_node(t_stack_node *head);
 t_stack_node	*ft_get_smallest_value(t_stack_node *head);
+t_stack_node	*ft_get_biggest_value(t_stack_node *head);
 t_stack_node    *ft_get_lowest_coast(t_stack_node *stack);
 int				check_sorted(t_stack_node *stack);
 int				ft_isdigit(int c);

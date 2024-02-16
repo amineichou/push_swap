@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 19:39:53 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/13 16:00:58 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/16 14:33:59 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,20 @@ t_stack_node	*ft_get_smallest_value(t_stack_node *head)
 		head = head->next;
 	}
 	return (smallest);
+}
+
+t_stack_node	*ft_get_biggest_value(t_stack_node *head)
+{
+	t_stack_node	*biggest;
+
+	biggest = head;
+	while (head)
+	{
+		if (biggest->value < head->value)
+			biggest = head;
+		head = head->next;
+	}
+	return (biggest);
 }
 
 t_stack_node    *ft_get_lowest_coast(t_stack_node *stack)
