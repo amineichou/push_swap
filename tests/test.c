@@ -231,11 +231,20 @@ int main(int ac, char **av)
     // printf("smallest %d\n", ft_get_smallest_value(stack)->value);
 
     // print_stack(stack);
-    char **test = ft_split(av[1], ' ');
+    // char **test = ft_split(av[1], ' ');
+    // int i = 0;
+    // while (test[i])
+    // {
+    //     printf("%s\n", test[i]);
+    //     i++;
+    // }
+
+	// Online C compiler to run C program online
+    char *str = "Br olzy Jnyetbdrc'g xun";
     int i = 0;
-    while (test[i])
+    while (str[i])
     {
-        printf("%s\n", test[i]);
+        printf("%d ", str[i]);
         i++;
     }
 }

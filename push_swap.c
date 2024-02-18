@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 21:18:57 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/15 21:12:29 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/18 16:56:32 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,14 @@ void print_list(t_stack_node *lst)
 	}
 }
 
+void get_leaks(void)
+{
+	system("leaks push_swap.c");
+}
+
 int main(int ac, char **av)
 {
+	// atexit(get_)
 	t_stack_node	*stack_a;
 	t_stack_node	*stack_b;
 

@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 19:50:42 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/16 18:41:03 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/18 16:31:44 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int				ft_isspace(char c);
 void	sort_three(t_stack_node **stack);
 void	update_stack(t_stack_node **stack_a, t_stack_node **stack_b);
 void	put_cheapest_on_top(t_stack_node **stack_a, t_stack_node **stack_b);
+void	choose_on_top(t_stack_node **stack_a, t_stack_node **stack_b);
 
 // stack updater
 void	set_cost(t_stack_node *stack_a, t_stack_node *stack_b);
@@ -69,10 +70,12 @@ void	swap_stack_a_b(t_stack_node **stack_a, t_stack_node **stack_b);
 // rotate
 void	rotate_a(t_stack_node **stack);
 void	rotate_b(t_stack_node **stack);
+void	rotate_a_b(t_stack_node **stack_a, t_stack_node **stack_b);
 
 // reverse rotate
 void	reverse_rotate_a(t_stack_node **stack);
 void	reverse_rotate_b(t_stack_node **stack);
+void	reverse_rotate_a_b(t_stack_node **stack_a, t_stack_node **stack_b);
 
 // push
 void	push_b_to_a(t_stack_node **stack_a, t_stack_node **stack_b);

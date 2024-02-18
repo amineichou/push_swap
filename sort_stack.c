@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 11:07:44 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/16 18:36:46 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/18 16:31:49 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,19 @@ static void	best_move(t_stack_node **stack_a, t_stack_node **stack_b)
 	int	med;
 
 	stack_a_size = ft_stack_size(*stack_a);
-	med = (ft_get_biggest_value(*stack_a)->value + ft_get_smallest_value(*stack_a)->value) / 2;
-	while (stack_a_size > 3)
+	med = ((ft_get_biggest_value(*stack_a)->value / 2) + (ft_get_smallest_value(*stack_a)->value / 2));
+	while (ft_stack_size(*stack_a) > 3 && !check_sorted(*stack_a))
 	{
 		push_a_to_b(stack_a, stack_b);
 		if((*stack_b)->value >= med)
 			rotate_b(stack_b);
-		stack_a_size--;
 	}
-	sort_three(stack_a);
+	if (!check_sorted(*stack_a))
+		sort_three(stack_a);
 	while (*stack_b)
 	{
 		update_stack(stack_a, stack_b);
-		put_cheapest_on_top(stack_a, stack_b);
+		choose_on_top(stack_a, stack_b);
 		push_b_to_a(stack_a, stack_b);
 	}
 	update_stack(stack_a, stack_b);
@@ -64,6 +64,6 @@ void	sort_stack(t_stack_node **stack_a, t_stack_node **stack_b)
 	size = ft_stack_size(*stack_a);
 	if (size <= 3)
 		sort_three(stack_a);
-	else if (size > 3)
+	else
 		best_move(stack_a, stack_b);
 }

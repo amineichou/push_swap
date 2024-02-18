@@ -1,61 +1,61 @@
-make
-# 3
-echo "3 random number"
-ARG="0 1 2"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="0 3 2"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="70 43 24"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="69 73 50"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="35 6 4"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="2 3 1"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="3 2 1"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-# 4
-echo "4 random number"
-ARG="851506 717625 98680 714067"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="90982 980374 58080 914888"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="712486 -115277 -350468 79497"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="-930791 -642988 871557 -673471"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="257050 27519 -844841 -609436"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="-911820 -513549 -429688 93526"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="2 0 1 4"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="1 4 3 2"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="4 1 3 2"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="3 0 1 4"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="3 0 1 4"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-# 5
-echo "5 random number"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="132 -138 9 -176 99"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="-186 22 -74 -197 -69"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="-92 -13 -178 -145 -165"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="-8 -169 -85 -28 172"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="52 -194 21 158 156"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="1 0 5 4 2"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="0 5 1 3 2"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="0 3 5 2 4"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="4 3 2 1 0"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="2 3 1 5 4"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="600332 48955 612455 790987 448157"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="227892 963673 186208 687278 286789"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="113907 597151 609573 105839 273240"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-# 10
-echo "10 random number"
-ARG="30 190 159 -73 122 95 -21 -141 -128 52"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="-56 -133 -111 -186 -40 73 181 -22 -132 -57"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="-143 150 -107 -171 6 -57 37 165 -91 116"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="-197 8 11 -68 -102 -60 200 -193 128 108"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="119 -119 -50 55 62 101 162 12 50 69"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-# 20
-echo "20 random number"
-ARG="18 11 3 5 10 6 13 7 12 19 4 9 17 20 1 15 16 8 2 14"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="11 15 14 20 9 1 2 6 19 13 8 3 16 4 17 7 18 12 10 5"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="2 16 20 17 15 6 9 8 10 12 13 4 19 18 5 3 11 14 1 7"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="5 9 4 11 3 13 8 2 14 17 15 1 19 10 16 6 7 20 18 12"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="14 10 9 7 12 4 17 1 8 15 5 3 18 6 11 16 13 20 19 2"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="1946 3172 2075 1487 2666 4850 4140 1292 4440 1121 1719 1097 4135 2944 5000 4737 4649 1626 2999 599"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="2326 1282 2022 427 3700 2877 3833 2001 1074 4373 3096 2788 1274 209 4209 670 4678 4656 484 317"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="1441 4560 2776 2595 1703 2148 3734 3519 815 1731 924 3199 684 4881 3472 3302 3925 3327 3166 3975"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="81 1059 4723 4618 3661 4812 2681 1529 4481 85 3390 3047 2964 4294 4580 3466 2477 1151 956 4425"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-ARG="4094 1750 2970 3599 2760 3479 3018 4924 597 4550 4574 3624 121 489 1233 4451 3123 641 4662 1"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-# 100
+# make
+# # 3
+# echo "3 random number"
+# ARG="0 1 2"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="0 3 2"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="70 43 24"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="69 73 50"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="35 6 4"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="2 3 1"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="3 2 1"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# # 4
+# echo "4 random number"
+# ARG="851506 717625 98680 714067"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="90982 980374 58080 914888"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="712486 -115277 -350468 79497"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="-930791 -642988 871557 -673471"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="257050 27519 -844841 -609436"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="-911820 -513549 -429688 93526"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="2 0 1 4"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="1 4 3 2"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="4 1 3 2"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="3 0 1 4"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="3 0 1 4"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# # 5
+# echo "5 random number"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="132 -138 9 -176 99"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="-186 22 -74 -197 -69"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="-92 -13 -178 -145 -165"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="-8 -169 -85 -28 172"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="52 -194 21 158 156"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="1 0 5 4 2"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="0 5 1 3 2"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="0 3 5 2 4"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="4 3 2 1 0"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="2 3 1 5 4"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="600332 48955 612455 790987 448157"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="227892 963673 186208 687278 286789"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="113907 597151 609573 105839 273240"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# # 10
+# echo "10 random number"
+# ARG="30 190 159 -73 122 95 -21 -141 -128 52"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="-56 -133 -111 -186 -40 73 181 -22 -132 -57"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="-143 150 -107 -171 6 -57 37 165 -91 116"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="-197 8 11 -68 -102 -60 200 -193 128 108"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="119 -119 -50 55 62 101 162 12 50 69"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# # 20
+# echo "20 random number"
+# ARG="18 11 3 5 10 6 13 7 12 19 4 9 17 20 1 15 16 8 2 14"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="11 15 14 20 9 1 2 6 19 13 8 3 16 4 17 7 18 12 10 5"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="2 16 20 17 15 6 9 8 10 12 13 4 19 18 5 3 11 14 1 7"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="5 9 4 11 3 13 8 2 14 17 15 1 19 10 16 6 7 20 18 12"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="14 10 9 7 12 4 17 1 8 15 5 3 18 6 11 16 13 20 19 2"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="1946 3172 2075 1487 2666 4850 4140 1292 4440 1121 1719 1097 4135 2944 5000 4737 4649 1626 2999 599"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="2326 1282 2022 427 3700 2877 3833 2001 1074 4373 3096 2788 1274 209 4209 670 4678 4656 484 317"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="1441 4560 2776 2595 1703 2148 3734 3519 815 1731 924 3199 684 4881 3472 3302 3925 3327 3166 3975"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="81 1059 4723 4618 3661 4812 2681 1529 4481 85 3390 3047 2964 4294 4580 3466 2477 1151 956 4425"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# ARG="4094 1750 2970 3599 2760 3479 3018 4924 597 4550 4574 3624 121 489 1233 4451 3123 641 4662 1"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
+# # 100
 echo "100 random numbers"
 ARG="861 776 2869 1061 1208 1874 577 4306 1536 106 1353 3725 206 2360 4732 898 1042 1969 2570 4746 4484 705 493 1530 4763 2412 3259 4113 1893 3843 3743 1248 3696 4096 1286 4313 1409 150 795 3461 400 2278 999 2476 3620 641 3430 799 4584 3432 3994 1562 195 1380 2075 2429 2180 3281 743 4255 1170 3855 4871 1189 325 4102 1130 215 2379 4150 4141 897 2366 4711 4815 3581 4477 2924 2097 2701 4819 4816 4125 4726 216 3226 1183 505 2157 3804 1586 3275 1793 2779 1234 3993 1849 733 1107 4199"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
 ARG="4134 3837 3903 3759 2942 2798 1855 762 947 3174 1415 682 2289 2072 942 2906 843 2243 2307 4577 1835 3465 1803 3374 906 2922 178 337 4473 4028 3596 4903 3240 2389 4261 3046 2150 3095 2257 3743 4683 2999 584 2339 1122 3662 1702 1980 350 280 3921 1018 4824 566 2428 4337 2546 4305 3525 3315 657 1742 4292 4996 3341 1050 3019 2566 3778 2993 206 3431 2421 3112 3155 4266 2451 2525 1413 1526 4921 3348 4896 3345 2328 4293 2988 2675 73 4734 4653 1230 4599 409 3612 1057 2352 2985 107 4911"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
@@ -67,7 +67,7 @@ ARG="84 75 83 7 33 74 16 64 24 13 25 29 36 53 23 59 100 88 49 3 11 38 91 20 82 8
 ARG="65 47 90 45 63 36 55 6 81 26 97 27 62 48 2 20 18 57 94 38 64 35 40 19 70 17 67 98 99 59 23 12 56 37 13 66 86 51 33 76 80 5 34 11 92 93 85 3 54 10 42 41 87 82 39 89 79 53 4 50 46 72 29 61 25 77 30 21 15 71 7 88 31 96 49 32 74 68 14 1 24 9 91 60 52 16 69 43 73 84 100 28 78 58 44 75 22 8 83 95"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
 ARG="85 54 52 93 45 10 66 70 89 97 94 56 7 18 26 13 36 9 49 24 11 21 80 17 78 46 84 74 23 44 95 37 22 61 6 25 20 35 81 33 27 68 57 59 29 76 4 14 38 69 99 79 100 88 71 64 51 48 62 31 63 82 34 60 87 98 90 75 73 5 16 30 12 92 55 8 1 32 58 47 50 86 83 28 40 77 65 41 67 91 42 39 2 3 53 96 19 72 15 43"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
 ARG="69 28 83 67 63 20 46 80 78 35 10 62 72 44 45 76 26 7 5 22 14 89 59 25 94 53 16 17 18 15 21 41 37 4 51 47 30 75 85 36 32 34 81 6 3 82 97 91 54 31 12 56 50 61 48 77 84 38 42 66 23 79 95 43 68 8 2 1 49 60 96 33 19 88 13 70 86 52 27 73 100 24 40 90 87 55 65 64 11 39 57 74 93 29 9 58 98 99 92 71"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-# 500
+# # 500
 echo "500 random numbers"
 ARG="2630 4643 2943 3766 726 6772 9685 1754 4936 2396 5294 4112 373 3556 2830 6899 7871 8174 1681 1986 4013 1270 7403 2470 6873 9887 5449 3243 9268 1338 7056 7685 6117 1476 7964 5377 4764 4062 5962 4120 7865 3508 6552 3089 452 4119 4721 5543 8068 6317 7887 9648 5052 3284 4469 83 5366 8419 4472 7844 5117 4573 2656 630 1085 7045 6985 7507 804 9515 7277 3134 9762 4904 5230 855 932 4346 2835 9308 2583 6082 5952 8162 7966 5346 2997 4385 5892 7178 2411 1223 1087 8377 1859 3663 3521 669 2769 9414 116 7063 4649 6888 7134 350 3304 694 966 204 4860 683 748 3168 8212 5884 8207 9094 9457 9908 2487 4802 8154 6615 9312 2133 4214 3459 9175 6106 2027 8714 7125 7760 8385 5931 4433 3256 719 771 6943 9888 3276 5226 4535 2641 9450 410 6075 8363 9286 6012 9921 6449 3600 5860 4723 4586 4559 1535 7365 6487 4950 6482 6507 8911 5197 9533 3495 5880 9335 1324 525 697 6130 819 86 5469 7090 9342 6502 4027 4972 6729 6957 9531 5054 735 6110 1513 6273 1426 5211 7465 1224 6468 6252 6301 7468 8619 7709 9303 8267 6745 4917 6980 3450 3825 606 7971 1724 46 2778 5305 3389 7139 5986 4123 8829 5902 5878 2000 52 1137 9925 2061 1670 8393 4528 3115 3416 1378 3902 9249 131 4673 4204 9772 9047 4269 7546 1232 5668 7910 8006 4787 9370 7481 6855 6840 916 6401 3020 5564 9852 7687 2304 8926 2079 9893 2826 4682 3259 1643 5672 4529 13 5821 6515 1757 1393 3774 9872 8475 5200 3570 1967 8469 2655 822 2872 2885 3536 8380 4265 8137 9255 9831 877 8893 6514 3683 4958 6858 3530 8290 7238 5269 3649 9239 8059 6953 2198 6688 5586 9816 7678 8030 8128 869 4276 1560 3783 1179 6050 4554 6570 4913 1718 6196 2067 7842 9015 5557 8990 2913 6122 9096 2112 7076 4144 415 9488 6684 7941 7039 9912 2371 2613 2465 7270 1738 9701 2334 8298 5017 5131 232 914 7363 7625 4501 6326 7216 7336 4439 9809 4478 6867 3420 9754 1978 650 7243 3312 7109 5936 2066 5221 522 2765 6325 512 6347 1869 6140 9410 4613 4567 5544 4856 8394 3476 2271 5864 2616 9396 3199 7279 4278 1055 8181 2137 4811 2551 1563 2203 5148 306 9631 5609 5105 1424 1160 8817 9687 2805 794 4548 9986 6824 2561 2111 482 5824 8024 6404 2019 2649 6479 1480 8617 9379 3445 9045 894 1763 3169 7622 4920 7660 8357 451 9987 8909 3242 3293 5957 9828 403 3735 440 4028 9382 9669 5142 5086 3202 1204 3926 3715 8222 5925 5178 9640 9428 4041 4339 1132 5301 7858 4816 852 7015 4003 7024 746 3106 7624 997 3266 3659 5608 1479 1073 6466 3140 5023 9621 7632 8397 4101 6271 6216 10000 356 6546 9423 3361 9808 9842 6029 2667 3107 4284 292 325 9284 1756 6956"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
 ARG="2661 7566 2121 4153 2998 7575 9141 1066 6984 5320 9043 6306 5619 9147 8308 1351 8642 4377 3483 5112 7219 5467 6015 9730 7523 2023 3758 127 7414 5800 4548 4529 3458 3431 635 5011 6572 3487 5357 124 6277 8724 242 8703 461 5762 1187 1459 6371 2803 707 5350 3812 562 9050 6626 223 695 6762 5376 1669 2397 965 7491 2558 2489 1793 3072 5999 1002 3616 5256 5311 8866 2110 7314 3720 3589 4259 7812 9423 393 8364 4462 9962 3494 2050 968 9270 3154 6068 8160 5341 2828 1493 2289 5588 3661 1505 3492 7829 9820 3633 3413 472 6757 752 4023 3341 6025 2855 9162 3131 1840 7916 7049 9150 2176 5213 3110 9492 195 6788 3822 5049 4619 9418 7548 7259 1760 2424 2387 652 5796 5715 6864 4064 2980 3141 1848 9213 6457 2413 996 1536 346 8053 3757 386 9538 149 6247 9365 1960 6587 3247 3572 1548 1288 873 6717 5369 1412 941 5630 3526 8582 3371 5240 112 6081 1659 4363 1218 9388 3138 659 1586 1161 8567 5232 4600 7130 1977 8176 990 8306 4962 8301 265 9121 9338 5305 8449 9082 4422 1206 4643 4346 7011 7418 3229 7135 8739 5631 4011 5809 8599 4527 1646 5236 6495 6620 3760 2356 4428 6363 2138 2728 202 2820 8042 2677 6941 2061 6647 5650 1152 7976 2312 4597 9285 4342 5186 3965 3499 603 4116 1993 1170 8246 6474 8815 6483 4699 3902 5892 9646 9385 6296 3194 201 7783 9806 7514 7882 4182 3093 2515 3573 8615 5386 736 4746 286 7972 6114 4846 8279 4075 4141 4292 6095 7629 3519 2644 5537 698 4048 7742 9160 3104 7874 4323 9764 3935 4335 6225 5026 4086 3230 1823 6288 3049 6555 3326 9211 9263 8105 6046 7285 4763 3891 9935 5769 7450 1080 8694 1112 2798 6106 3789 3159 5053 4019 9880 1649 7515 4137 6920 8566 7308 4373 2065 2255 5096 3475 5113 4831 6281 9710 7015 8245 3786 9316 1909 115 6589 7797 103 2895 5389 2066 3107 9394 6537 8129 3382 7998 6484 170 3148 4622 5021 9589 8600 7026 5279 7901 5839 5849 9166 3324 4839 9422 5286 7690 3042 1667 2498 4609 9751 4856 3032 5702 6976 5922 7386 5916 9168 1068 5586 2864 1756 5599 2006 2042 1675 617 1781 7087 6877 3545 9197 3996 6446 40 2849 6167 3 5392 9080 2963 9045 6178 4528 3440 101 4998 8330 7110 8732 2805 6074 5822 2002 9667 7374 9183 8554 179 9330 3668 3950 5984 90 1386 8084 8197 9718 2172 1935 8553 9023 9966 5920 8802 8303 8858 1744 188 3649 113 6102 9436 9845 7254 307 3826 2294 6464 3715 347 7029 1506 2650 4690 7495 9490 9238 2640 7429 9885 9481 6688 734 9655 9007 285 2974 8319 2377 9216 8194 5411 9202 6144 2846 7477 154 9739 6480 4358 2204 6050 8968 9450 2347 5994 3416 9081 5328 3135 6562 9560 1717 5490 7978 186 6675"; ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
