@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 19:39:53 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/16 14:33:59 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/19 19:03:01 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,19 +103,22 @@ t_stack_node	*ft_get_biggest_value(t_stack_node *head)
 t_stack_node    *ft_get_lowest_coast(t_stack_node *stack)
 {
     t_stack_node    *node_lowest_coast;
-    int             lowest_coast;
+	t_stack_node	*helper = stack;
+    long             lowest_coast;
 
-    lowest_coast = -1;
-    node_lowest_coast = stack;
-    while (stack)
+    lowest_coast = LONG_MAX;
+    node_lowest_coast = NULL;
+    while (helper)
     {
-        if (lowest_coast > stack->coast)
+        if (lowest_coast > helper->coast)
         {
-            lowest_coast = stack->coast;
-            node_lowest_coast = stack;
+            lowest_coast = helper->coast;
+            node_lowest_coast = helper ;
         }
-        stack = stack->next;
+        helper = helper->next;
     }
+	if (node_lowest_coast == NULL)
+		printf("bitch\n");
     return (node_lowest_coast);
 }
 

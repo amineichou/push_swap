@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 19:50:42 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/18 16:31:44 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/19 18:30:58 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,6 @@ void	sort_stack(t_stack_node **stack_a, t_stack_node **stack_b);
 // test apps /utils
 void test_putargs(char **av, int ac);
 void test_putsplited(char **av);
+void print_list(t_stack_node *lst);
 
 # endif

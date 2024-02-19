@@ -224,9 +224,9 @@ char	**ft_split(char const *s, char c)
 
 int main(int ac, char **av)
 {
-    // initRandom();
-	// t_stack_node *stack = NULL;
-    // generate_linked_list(&stack, 4, 10);
+    initRandom();
+	t_stack_node *stack = NULL;
+    generate_linked_list(&stack, 4, 10);
 
     // printf("smallest %d\n", ft_get_smallest_value(stack)->value);
 
@@ -238,13 +238,4 @@ int main(int ac, char **av)
     //     printf("%s\n", test[i]);
     //     i++;
     // }
-
-	// Online C compiler to run C program online
-    char *str = "Br olzy Jnyetbdrc'g xun";
-    int i = 0;
-    while (str[i])
-    {
-        printf("%d ", str[i]);
-        i++;
-    }
 }

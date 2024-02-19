@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 21:18:57 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/18 16:56:32 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/19 19:05:29 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,9 @@ void print_list(t_stack_node *lst)
 	t_stack_node *test = lst;
 	while (test)
 	{
-		// if (test->target_node)
-		// 	printf("%d(%d) ",  test->value, test->coast);
-		// else
+		if (test->target_node)
+			printf("%d(%d) ",  test->value, test->coast);
+		else
 			printf("%d ", test->value);
 		test = test->next;
 	}

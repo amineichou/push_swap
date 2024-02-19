@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 14:59:59 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/14 20:22:20 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/19 15:57:45 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,17 @@ void	set_cost(t_stack_node *stack_a, t_stack_node *stack_b)
 	{
 		if (stack_b->is_above_middle && stack_b->target_node->is_above_middle)
 			stack_b->coast = stack_b->index + stack_b->target_node->index;
+			
 		else if (!(stack_b->is_above_middle) && !(stack_b->target_node->is_above_middle))
 			stack_b->coast = (b_size - stack_b->index) + (a_size - stack_b->target_node->index);
+			
 		else if (stack_b->is_above_middle && !(stack_b->target_node->is_above_middle))
 			stack_b->coast = stack_b->index + (a_size - stack_b->target_node->index);
+
 		else if (!(stack_b->is_above_middle) && stack_b->target_node->is_above_middle)
 			stack_b->coast = (b_size - stack_b->index) + stack_b->target_node->index;
+		
+		//printf("cost of %d is %d\n", stack_b->value, stack_b->coast);
 		stack_b = stack_b->next;
 	}
 }
