@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:30:43 by moichou           #+#    #+#             */
-/*   Updated: 2024/01/10 15:37:38 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/22 11:51:01 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ static size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	dst[i] = '\0';
 	return (src_len);
 }
-
 
 static size_t	ft_count_delimiters(char const *s, char c)
 {
@@ -97,7 +96,7 @@ static char	**fill_the_splited(char **splited, const char *str, char c)
 	return (splited);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char *s, char c)
 {
 	char	**splited;
 	int		count_del;
@@ -111,5 +110,6 @@ char	**ft_split(char const *s, char c)
 	if (!fill_the_splited(splited, s, c))
 		return (0);
 	splited[count_del] = 0;
+	free(s);
 	return (splited);
 }

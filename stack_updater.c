@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 14:59:59 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/19 15:57:45 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/22 12:33:13 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,18 @@ void	set_cost(t_stack_node *stack_a, t_stack_node *stack_b)
 	{
 		if (stack_b->is_above_middle && stack_b->target_node->is_above_middle)
 			stack_b->coast = stack_b->index + stack_b->target_node->index;
-			
-		else if (!(stack_b->is_above_middle) && !(stack_b->target_node->is_above_middle))
-			stack_b->coast = (b_size - stack_b->index) + (a_size - stack_b->target_node->index);
-			
-		else if (stack_b->is_above_middle && !(stack_b->target_node->is_above_middle))
-			stack_b->coast = stack_b->index + (a_size - stack_b->target_node->index);
-
-		else if (!(stack_b->is_above_middle) && stack_b->target_node->is_above_middle)
-			stack_b->coast = (b_size - stack_b->index) + stack_b->target_node->index;
-		
-		//printf("cost of %d is %d\n", stack_b->value, stack_b->coast);
+		else if (!(stack_b->is_above_middle)
+			&& !(stack_b->target_node->is_above_middle))
+			stack_b->coast = (b_size - stack_b->index)
+				+ (a_size - stack_b->target_node->index);
+		else if (stack_b->is_above_middle
+			&& !(stack_b->target_node->is_above_middle))
+			stack_b->coast = stack_b->index
+				+ (a_size - stack_b->target_node->index);
+		else if (!(stack_b->is_above_middle)
+			&& stack_b->target_node->is_above_middle)
+			stack_b->coast = (b_size - stack_b->index)
+				+ stack_b->target_node->index;
 		stack_b = stack_b->next;
 	}
 }
@@ -66,7 +67,7 @@ void	set_position_middle(t_stack_node *stack_a, t_stack_node *stack_b)
 void	set_index(t_stack_node *stack)
 {
 	t_stack_node	*head;
-	int 			i;
+	int				i;
 
 	head = stack;
 	i = 0;
@@ -100,4 +101,13 @@ void	set_target_node(t_stack_node *stack_a, t_stack_node *stack_b)
 			stack_b->target_node = ft_get_smallest_value(stack_a);
 		stack_b = stack_b->next;
 	}
+}
+
+void	update_stack(t_stack_node **stack_a, t_stack_node **stack_b)
+{
+	set_index(*stack_a);
+	set_index(*stack_b);
+	set_target_node(*stack_a, *stack_b);
+	set_position_middle(*stack_a, *stack_b);
+	set_cost(*stack_a, *stack_b);
 }
