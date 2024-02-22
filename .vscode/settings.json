@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "*.excalidraw": "json",
-        "*.excalidrawlib": "json",
-        "cstdio": "c",
-        "push_swap.h": "c",
-        "chrono": "c"
-    }
-}
