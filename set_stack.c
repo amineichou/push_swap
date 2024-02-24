@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:58:03 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/07 15:49:22 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/22 12:03:16 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ static t_stack_node	*create_node(char *value)
 	t_stack_node	*new_node;
 
 	new_node = malloc(sizeof(t_stack_node));
+	if (!new_node)
+		return (NULL);
 	new_node->value = ft_atoi(value);
+	new_node->target_node = NULL;
 	return (new_node);
 }
 
@@ -39,16 +42,22 @@ t_stack_node	*set_stack(char **splited)
 {
 	t_stack_node	*stack_head;
 	t_stack_node	*first_node;
+	t_stack_node	*temp;
 	int				i;
 
-	// initilize the first node
 	first_node = create_node(splited[0]);
 	first_node->next = NULL;
 	stack_head = first_node;
 	i = 1;
 	while (splited[i])
 	{
-		append_node_to_stack(&stack_head, create_node(splited[i]));
+		temp = create_node(splited[i]);
+		if (!temp)
+		{
+			free_stack(stack_head);
+			exit(1);
+		}
+		append_node_to_stack(&stack_head, temp);
 		i++;
 	}
 	return (stack_head);
