@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 21:18:57 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/22 11:56:46 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/24 13:41:06 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ static int	check_doublcates(char **av)
 	return (0);
 }
 
-// check also for string that only has spaces == empty
 static void	check_for_empty_string(char **str, int ac)
 {
 	int	i;
