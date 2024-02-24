@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 21:18:57 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/22 11:56:46 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/08 19:02:23 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ static int	check_doublcates(char **av)
 static void	check_for_empty_string(char **str, int ac)
 {
 	int	i;
-	int	j;
 
 	i = 1;
+	int j;
 	if (!*str)
 		ft_puterror();
 	while (i < ac)
@@ -47,7 +47,7 @@ static void	check_for_empty_string(char **str, int ac)
 		while (str[i][j])
 		{
 			if (!ft_isspace(str[i][j]))
-				break ;
+				break;
 			j++;
 		}
 		if (str[i][j] == '\0')
@@ -56,10 +56,10 @@ static void	check_for_empty_string(char **str, int ac)
 	}
 }
 
-static int	check_foronly_numbers(char **av)
+static void	check_valid_args(char **av)
 {
 	int	i;
-	int	j;
+	int j;
 
 	i = 0;
 	while (av[i])
@@ -67,67 +67,39 @@ static int	check_foronly_numbers(char **av)
 		j = 0;
 		while (av[i][j])
 		{
-			if (!ft_isdigit(av[i][j]) && !ft_isspace(av[i][j])
-				&& av[i][j] != '+' && av[i][j] != '-')
-				return (0);
+			if (ft_isdigit(av[i][j]) && av[i][j + 1] && !ft_isdigit(av[i][j + 1]))
+				ft_puterror();
 			j++;
 		}
 		i++;
 	}
-	return (1);
 }
 
-static int	check_valid_args(char **av)
+int main(int ac, char **av)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	while (av[i])
-	{
-		j = 0;
-		while (av[i][j])
-		{
-			if ((av[i][j] == '+' || av[i][j] == '-')
-				&& av[i][j + 1] && !ft_isdigit(av[i][j + 1]))
-				return (-1);
-			if ((av[i][j] == '+' || av[i][j] == '-') && !av[i][j + 1])
-				return (-1);
-			if (ft_isdigit(av[i][j]) && av[i][j + 1]
-				&& !ft_isdigit(av[i][j + 1]))
-				return (-1);
-			j++;
-		}
-		i++;
-	}
-	return (1);
-}
-
-int	main(int ac, char **av)
-{
-	t_stack_node	*stack_a;
-	t_stack_node	*stack_b;
+	// t_stack_node	*stack_a;
+	// t_stack_node	*stack_b;
+	// int				i;
 
 	if (ac == 1)
 		return (0);
 	if (ac >= 2)
 	{
 		check_for_empty_string(av, ac);
-		av = ft_split(ft_strsjoin(av, ac), ' ');
-		if (check_valid_args(av) == -1 || !check_foronly_numbers(av))
-		{
-			free_double_str(av);
-			ft_puterror();
-		}
+		av = ft_split(ft_strjoin(av, ac), ' ');
+		check_valid_args(av);
 	}
+	// i = 0;
 	if (check_doublcates(av))
-	{
-		free_double_str(av);
 		ft_puterror();
-	}
-	stack_a = set_stack(av);
-	stack_b = NULL;
-	if (!check_sorted(stack_a))
-		sort_stack(&stack_a, &stack_b);
-	return (free_double_str(av), (free_stack(stack_a), 0));
+	// stack_a = set_stack(av);
+	// stack_b = NULL;
+	// if (!check_sorted(stack_a))
+	// 	sort_stack(&stack_a, &stack_b);
+	// if (check_sorted(stack_a))
+	// {
+	// 	ft_putstr("OK\n");
+	// 	return (0);
+	// }
+    return (0);
 }

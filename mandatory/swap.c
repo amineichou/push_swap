@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   swap_stack.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 12:34:13 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/22 12:34:35 by moichou          ###   ########.fr       */
+/*   Created: 2024/01/02 21:54:06 by moichou           #+#    #+#             */
+/*   Updated: 2024/01/09 17:56:15 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 // swap_stack the first two values on a stack
 void	swap_stack(t_stack_node **stack)
 {
-	t_stack_node	*x;
-	t_stack_node	*y;
+	t_stack_node	*x; // top of the stack
+	t_stack_node	*y; // second
+//	t_stack_node	*z; // temporary
 
 	x = *stack;
 	y = (*stack)->next;
@@ -29,18 +30,18 @@ void	swap_stack_a(t_stack_node **stack)
 {
 	int	size;
 
-	size = ft_stack_size(*stack);
+	size = stack_size(*stack);
 	if (size <= 1)
 		return ;
 	swap_stack(stack);
-	ft_putstr("sa\n");
+    ft_putstr("sa\n");
 }
 
 void	swap_stack_b(t_stack_node **stack)
 {
 	int	size;
 
-	size = ft_stack_size(*stack);
+	size = stack_size(*stack);
 	if (size <= 1)
 		return ;
 	swap_stack(stack);
@@ -52,8 +53,8 @@ void	swap_stack_a_b(t_stack_node **stack_a, t_stack_node **stack_b)
 	int	size_a;
 	int	size_b;
 
-	size_a = ft_stack_size(*stack_a);
-	size_b = ft_stack_size(*stack_b);
+	size_a = stack_size(*stack_a);
+	size_b = stack_size(*stack_b);
 	if (size_a <= 1 || size_b <= 1)
 		return ;
 	swap_stack(stack_b);
