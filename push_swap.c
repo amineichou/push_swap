@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 21:18:57 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/24 13:41:06 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/26 22:22:31 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ static void	check_for_empty_string(char **str, int ac)
 	int	j;
 
 	i = 1;
-	if (!*str)
-		ft_puterror();
 	while (i < ac)
 	{
 		j = 0;
@@ -113,7 +111,7 @@ int	main(int ac, char **av)
 	{
 		check_for_empty_string(av, ac);
 		av = ft_split(ft_strsjoin(av, ac), ' ');
-		if (check_valid_args(av) == -1 || !check_foronly_numbers(av))
+		if (check_valid_args(av) == -1 || !check_foronly_numbers(av)) 
 		{
 			free_double_str(av);
 			ft_puterror();

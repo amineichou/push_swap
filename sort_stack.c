@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 11:07:44 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/24 13:41:52 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/26 21:45:58 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	best_move(t_stack_node **stack_a, t_stack_node **stack_b)
 	while (ft_stack_size(*stack_a) > 3)
 	{
 		push_a_to_b(stack_a, stack_b);
-		if ((*stack_b)->value < med)
+		if ((*stack_b)->value >= med)
 			rotate_b(stack_b);
 	}
 	sort_three(stack_a);
