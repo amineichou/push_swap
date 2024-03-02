@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 21:18:57 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/29 13:05:09 by moichou          ###   ########.fr       */
+/*   Updated: 2024/03/02 18:48:07 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ static int	check_foronly_numbers(char **av)
 		j = 0;
 		while (av[i][j])
 		{
-			if (!ft_isdigit(av[i][j]) && !ft_isspace(av[i][j])
-				&& av[i][j] != '+' && av[i][j] != '-')
+			if ((!ft_isdigit(av[i][j]) && !ft_isspace(av[i][j])
+				&& av[i][j] != '+' && av[i][j] != '-') || (av[i][j] == '\t'))
 				return (0);
 			j++;
 		}
