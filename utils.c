@@ -6,7 +6,7 @@
 /*   By: moichou <moichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 13:43:17 by moichou           #+#    #+#             */
-/*   Updated: 2024/02/24 13:45:01 by moichou          ###   ########.fr       */
+/*   Updated: 2024/02/27 15:24:18 by moichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	*ft_strsjoin(char **str, int ac)
 		size += ft_strlen(str[i++]);
 	result = malloc(sizeof(char) * (size + ac));
 	if (!result)
-		return (NULL);
+		exit(0);
 	i = 1;
 	x = 0;
 	while (i < ac)
